@@ -1,14 +1,13 @@
-# 🤖 HojeLB TeleOp — FTC Robot Control Code
+# 🤖 HojeLB3 TeleOp — Team Angola FGC 2025 Robot Control Code
 
-This repository contains the **TeleOp control program** for the **Eco Equilibrium 2025** robot, developed for the **FIRST Tech Challenge (FTC)** using the **REV Robotics Control Hub**.
+This repository contains the **TeleOp control program** for the **Team Angola FGC 2025** robot, developed for the **FIRST Global Challenge (FGC)** using the **REV Robotics Control Hub** and FTC SDK.
 
 ---
 
 ## 🌍 Overview
 
-**HojeLB** is a Java-based TeleOp mode that enables precise manual control of a multifunctional robot built for environmental restoration and coordination tasks inspired by the *Eco Equilibrium 2025* challenge.
-
-The code manages driving, intake, lifting, and balancing systems, allowing full mobility and mechanism control during competition matches.
+**HojeLB3** is a Java-based TeleOp mode that enables manual control of a multifunctional robot built for the *FIRST Global Challenge 2025*.  
+The program integrates multiple subsystems such as driving, intake, arm control, and servo manipulation, allowing smooth and efficient robot operation during the competition.
 
 ---
 
@@ -19,11 +18,11 @@ The code manages driving, intake, lifting, and balancing systems, allowing full 
 | **Length** | 50 cm |
 | **Breadth** | 50 cm |
 | **Height** | 48 cm |
-| **Chassis Type** | Westcoast Tank Drive |
+| **Chassis Type** | Differential Tank Drive |
 | **Power Source** | 12 V DC Battery |
-| **Motors** | 4 × REV 5:1 Motors, 2 × REV UltraPlanetary 125:1, 1 × REV Core Hex |
+| **Motors** | 4 × REV HD Motors, 1 × Arm Motor (Core Hex), 2 × Intake Motors |
 | **Microcontroller** | REV Control Hub |
-| **Programming Language** | Java (converted from Blocks) |
+| **Programming Language** | Java (converted from FTC Blocks) |
 
 ---
 
@@ -32,12 +31,13 @@ The code manages driving, intake, lifting, and balancing systems, allowing full 
 | Input | Function |
 |-------|-----------|
 | **Left Stick** | Move robot (arcade drive) |
-| **Right Bumper** | Intake forward |
-| **Left Bumper** | Intake reverse |
-| **D-Pad Up / Down** | Rotate continuous servos |
-| **D-Pad Left / Right** | Adjust servo arms (open/close) |
-| **Cross (X)** | Lower lift motors |
-| **Triangle (△)** | Raise lift motors |
+| **Right Stick** | Move the arm (`Brac`) |
+| **Right Bumper (RB)** | Intake forward (`Sug`, `Sug2`) |
+| **Left Bumper (LB)** | Intake reverse |
+| **D-Pad Up / Down** | Rotate continuous servos (`Srigth`, `Sleft`) |
+| **D-Pad Left / Right** | Adjust claw servos (`Braleft`, `Braright`) |
+| **Cross (X)** | Lower lift motors (`MPenD0`, `MPenE1`) |
+| **Triangle (△)** | Raise lift motors (`MPenD0`, `MPenE1`) |
 | **Circle (O)** | Activate actuator (`Ace`) |
 | **Square (□)** | Stop actuator & servos |
 
@@ -45,26 +45,27 @@ The code manages driving, intake, lifting, and balancing systems, allowing full 
 
 ## 🧠 System Functions
 
-- **Drive System** — two main DC motors (`MD0`, `ME1`) with differential tank drive  
-- **Intake System** — dual motors (`Sug`, `Sug2`) for collecting and releasing game elements  
-- **Lift System** — two motors (`MPenD0`, `MPenE1`) for vertical movement  
-- **Actuator** — single DC motor (`Ace`) for secondary functions  
-- **Servo System** — CR servos (`Sright`, `Sleft`) and standard servos (`Braleft`, `Braright`) for manipulation and balance  
+- **Drive System** — dual DC motors (`MD0`, `ME1`) for differential drive  
+- **Arm Mechanism** — single DC motor (`Brac`) for lifting and lowering the arm  
+- **Intake System** — twin motors (`Sug`, `Sug2`) for object collection and release  
+- **Lift System** — two DC motors (`MPenD0`, `MPenE1`) for vertical mechanisms  
+- **Actuator** — motor (`Ace`) for accelerator mechanical actions  
+- **Servo System** — CR servos (`Srigth`, `Sleft`) and positional servos (`Braleft`, `Braright`) for manipulation and balance  
 
 ---
 
-## 🌿 Context — Eco Equilibrium 2025
+## 🌎 Challenge Context — FIRST Global 2025
 
-The *Eco Equilibrium* challenge focuses on **restoring ecosystems**, **removing barriers to biodiversity**, and **maintaining global stability**.  
-This code supports a robot capable of:
-- Transporting and depositing biodiversity units  
-- Balancing on the **Eco Balance Platform**  
-- Demonstrating collaboration and precision in the final **Equilibrium Phase**
+The **FIRST Global Challenge 2025** emphasizes **innovation**, **sustainability**, and **team collaboration** among young engineers worldwide.  
+Team Angola’s robot is designed to:
+- Perform precise and stable movement control  
+- Manipulate game elements using coordinated arm and servo systems  
+- Demonstrate efficiency and creativity in technical execution  
 
 ---
 
 ## 🧩 Installation & Usage
 
-1. Clone this repository to your **FTC Robot Controller project folder**:  
+1. Clone this repository into your **FTC Robot Controller project folder**:
    ```bash
-   git clone https://github.com/yourusername/HojeLB-TeleOp.git
+   git clone https://github.com/Quilmer/Team-Angola-FGC-2025.git
